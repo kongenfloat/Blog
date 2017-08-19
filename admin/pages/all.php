@@ -9,6 +9,7 @@
         $image = $list[$post]['image'];
         $created =  $list[$post]['created'];
 
+        $div_id = "div_" . $id;
 
         //Process $blog_text for minimized post if string length is longer than 900 characters
         if(strlen ($blog_text) > 900){
@@ -19,7 +20,7 @@
         //$updated = $post['updated'];
         //$likes = $post['likes'];
         //$views = $post['views'];
-        echo "<div class='minimized-post margin-top-4'>";
+        echo "<div id='$div_id' class='minimized-post margin-top-4'>";
     		echo "<div class='minimized-post-left'>";
     			echo "<h2>$heading</h2>";
     			echo "<p>$created</p>";

@@ -1,6 +1,7 @@
 function delete_post(button) {
 
 	var id = button.value;
+	var div_id = "div_" + id.toString();
 	//Ask user to confirm delete. 
 	var r = confirm("Press a button!");
 	if (r == true) {
@@ -10,16 +11,8 @@ function delete_post(button) {
 		xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
-				var msg = xhttp.responseText;
-				console.log(msg); //Display "true" after first like
-				
-				/*if(msg === "true"){
-					//alert("Den er true");
-					document.getElementById("error").innerHTML = "Du har allerede likt dette blogginnlegget";
-				}else{
-					//alert("Den er ikke true");
-					document.getElementById("likes").innerHTML = msg;
-				}*/
+				var element = document.getElementById(div_id);
+				element.parentNode.removeChild(element);
 			}
 		};
 		xhttp.open("GET", "php/delete.php?id="+id, true);
