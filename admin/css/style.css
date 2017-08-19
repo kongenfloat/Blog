@@ -4,7 +4,7 @@ h1{
 }
 
 h2{
-	font-size: 36px;
+	font-size: 32px;
 }
 
 label{
@@ -35,7 +35,7 @@ form{
 }
 #content{
 	margin: auto;
-	width: 60%;
+	width: 80%;
 }
 
 table{
@@ -71,11 +71,11 @@ a:hover{
 }
 
 .minimized-post{
-	height : 40%;
+	height : 100%;
 	width: 70%;
 	display:block;
 	margin:auto;
-	margin-right:10%;
+
 
 }
 .minimized-post-left{
@@ -126,7 +126,7 @@ img{
 }
 
 #minimized-text{
-	margin-bottom: 10%;
+	margin-top: 3%;
 	height: 50%;
 }
 

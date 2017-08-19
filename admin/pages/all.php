@@ -13,8 +13,14 @@
 
         //Process $blog_text for minimized post if string length is longer than 150 characters
         if(strlen ($blog_text) > 150){
-        	$blog_text = substr ($blog_text , 0, 150);
+        	$blog_text = substr ($blog_text , 0, 149);
         	$blog_text = $blog_text . "...";	
+        }
+
+        //Process $heading for minimized post if string length is longer than 21 characters
+        if(strlen ($heading) > 21){
+            $heading = substr ($heading , 0, 20);
+            $heading = $heading . "...";    
         }
         
         //$updated = $post['updated'];
