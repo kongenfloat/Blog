@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("../../blog/access/database_functions.php");
 include_once("functions.php");
 
@@ -25,6 +26,9 @@ if(isset($_POST['submit'])){
 
 	//Insert new post in database
 	edit_post($id, $heading, $blog_text);
+
+	//Success message
+	$_SESSION['success'] = "<div><p>Blogginlegget har blitt endret</p></div>";
 
 	//Redirect back to admin.php
 	header("Location: http://splend-it.no/admin?page=all");

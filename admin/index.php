@@ -1,6 +1,21 @@
 <?php 
+session_start();
 include_once("php/functions.php");
 include_once("../blog/access/database_functions.php");
+
+
+//Check if an action has been done earlier
+if(isset($_SESSION['success'])){
+    $success = $_SESSION['success']; 
+}else{
+    $success="";
+}
+if(isset($_SESSION['err'])){
+    $err = $_SESSION['err']; 
+}else{
+    $err="";
+}
+
 ?>
 
 <!doctype html>
@@ -21,9 +36,15 @@ include_once("../blog/access/database_functions.php");
         <a href="http://splend-it.no/admin?page=all" class="center">Se alle blogginnlegg</a>
     </div>
     <div id="content">
-
+    <!--Display message from delete ajax call-->
+        <p id="msg"></p>
         <?php 
-            //Check which page to show
+
+            //Success and error messages from earlier actions
+            echo $success;
+            echo $err; 
+
+            //Check which page to display
             if(isset($_GET['page'])){
                 $page = $_GET['page'];
                 switch ($page) {
@@ -44,3 +65,15 @@ include_once("../blog/access/database_functions.php");
 </div>
 </body>
 </html>
+
+
+<?php
+//Removes used message variables in session
+//Will not be displayed anymore after reload
+if(isset($_SESSION['success'])){
+    session_unset($_SESSION['success']);
+}
+if(isset($_SESSION['err'])){
+    session_unset($_SESSION['err']);
+}
+?>

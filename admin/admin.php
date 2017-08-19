@@ -19,7 +19,9 @@ include_once("../blog/access/database_functions.php");
         <a href="http://splend-it.no/admin/admin.php?page=all" class="center">Se alle blogginnlegg</a>
     </div>
     <div id="content">
-        <?php 
+        <?php
+            
+
             //Check which page to show
             if(isset($_GET['page'])){
                 if(isset($_GET['page']) == "all"){
@@ -33,3 +35,6 @@ include_once("../blog/access/database_functions.php");
 </div>
 </body>
 </html>
+
+
+

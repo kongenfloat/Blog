@@ -1,6 +1,8 @@
 <?php
+session_start();
 include_once("../../blog/access/database_functions.php");
 include_once("functions.php");
+
 
 //Check if submit is clicked, if not redirect to admin.php with error message.
 if(isset($_POST['submit'])){
@@ -26,7 +28,7 @@ if(isset($_POST['submit'])){
 
 	//Insert new post in database
 	new_post($heading, $blog_text, $image);
-
+	$_SESSION['success'] = "<div><p>Blogginlegget har blitt opprettet</p></div>";
 	//Redirect back to admin.php
 	header("Location: http://splend-it.no/admin/");
 }else{
