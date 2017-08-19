@@ -17,7 +17,7 @@ input{
 	margin: auto;
 	display: block;
 	height: 36px;
-	width: 50%;
+	width: 80%;
 	margin-top: 3%;
 
 }
@@ -38,6 +38,19 @@ form{
 	width: 60%;
 }
 
+table{
+	border-spacing: 15px;
+}
+
+#menu{
+	display: block;
+	margin: auto;
+	width: 30%;
+	
+}
+#second{
+	margin-left: 45%;
+}
 a:hover { 
 }
 
@@ -59,6 +72,10 @@ a:hover{
 
 .minimized-post{
 	height : 40%;
+	width: 70%;
+	display:block;
+	margin:auto;
+	margin-right:10%;
 
 }
 .minimized-post-left{
@@ -100,7 +117,40 @@ img{
 	margin-top:2%;
 }
 
+.margin-right-4{
+	margin-right: 4%;
+}
+
+.margin-left-4{
+	margin-left: 4%;
+}
+
 #minimized-text{
 	margin-bottom: 10%;
 	height: 50%;
+}
+
+
+/* Warning and sucess messages that appare when submitting form to the database*/
+.warning, .success {
+	width: 55%;
+	height: 2vw;
+	margin: auto;
+	padding: 1.5vw 5% 3% 5%;
+	display:block;
+	text-align: center;
+	border: 1px solid;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+       -o-border-radius: 4px;
+}
+.warning {
+	color: #D8000C;
+	background-color: #FFBABA;
+}
+.success {
+	color: #4F8A10;
+	background-color: #DFF2BF;
 }

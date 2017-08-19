@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php session_start();
 include_once("../../blog/access/database_functions.php");
 include_once("functions.php");
 
@@ -28,11 +27,11 @@ if(isset($_POST['submit'])){
 
 	//Insert new post in database
 	new_post($heading, $blog_text, $image);
-	$_SESSION['success'] = "<div><p>Blogginnlegget har blitt opprettet</p></div>";
-	//Redirect back to admin.php
-	header("Location: http://splend-it.no/admin/");
+	$_SESSION['success'] = "<div class='success'><p>Blogginnlegget har blitt opprettet</p></div>";
+	//Redirect back to index
+	header("Location: ../index.php");
+	exit();
 }else{
-	//TODO:
-	//Handle what to do if submit is not clicked
+	//TODO: Redirect to error page. Reason : Permission denied. 
 }
 ?>

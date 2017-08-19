@@ -1,4 +1,3 @@
-
     <form name="post_form" action="php/create_post.php" method="post" enctype="multipart/form-data">
         <input type="text" name="heading" placeholder="Overskrift">
         <textarea name="blog_text" id="textarea">Hva tenker du på?</textarea>

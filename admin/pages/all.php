@@ -11,9 +11,9 @@
 
         $div_id = "div_" . $id;
 
-        //Process $blog_text for minimized post if string length is longer than 900 characters
-        if(strlen ($blog_text) > 900){
-        	$blog_text = substr ($blog_text , 0, 900);
+        //Process $blog_text for minimized post if string length is longer than 150 characters
+        if(strlen ($blog_text) > 150){
+        	$blog_text = substr ($blog_text , 0, 150);
         	$blog_text = $blog_text . "...";	
         }
         

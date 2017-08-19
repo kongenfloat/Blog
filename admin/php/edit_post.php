@@ -28,10 +28,11 @@ if(isset($_POST['submit'])){
 	edit_post($id, $heading, $blog_text);
 
 	//Success message
-	$_SESSION['success'] = "<div><p>Blogginlegget har blitt endret</p></div>";
+	$_SESSION['success'] = "<div class='success'><p>Blogginlegget har blitt endret</p></div>";
 
 	//Redirect back to admin.php
 	header("Location: http://splend-it.no/admin?page=all");
+	exit();
 }else{
 	//TODO:
 	//Handle what to do if submit is not clicked

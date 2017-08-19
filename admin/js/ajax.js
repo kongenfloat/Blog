@@ -14,6 +14,7 @@ function delete_post(button) {
 				var element = document.getElementById(div_id);
 				element.parentNode.removeChild(element);
 				var msg = xhttp.responseText;
+				document.getElementById("ajax-msg").style = "visibility: visible";
 				document.getElementById("msg").innerHTML = msg;
 
 			}
