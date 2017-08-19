@@ -15,7 +15,6 @@ if(isset($_SESSION['err'])){
 }else{
     $err="";
 }
-
 ?>
 
 <!doctype html>
@@ -33,31 +32,39 @@ if(isset($_SESSION['err'])){
 <div id="container">
     <div id="header">
         <h1 class="center-text">Admin</h1>
-        <a href="http://splend-it.no/admin?page=all" class="center">Se alle blogginnlegg</a>
+        
     </div>
     <div id="content">
-    <!--Display message from delete ajax call-->
+    <!--Message from delete ajax call-->
         <p id="msg"></p>
-        <?php 
+        <?php
 
             //Success and error messages from earlier actions
             echo $success;
             echo $err; 
 
-            //Check which page to display
-            if(isset($_GET['page'])){
-                $page = $_GET['page'];
-                switch ($page) {
-                    case "all":
-                        include("pages/all.php");
-                        break;
-                    case "edit":
-                        include("pages/edit.php");
-                        break;
-                    default:
-                }   
+            //Check if admin is logged in if not display login form
+            if(isset($_SESSION["user"])){
+
+                echo "<a href='http://splend-it.no/admin?page=all' class='center'>Se alle blogginnlegg</a>";
+                echo "<a href='http://splend-it.no/admin/php/logout.php' class='center'>Logg ut</a>";
+                
+                //If global GET contains page then include that page, otherwise landing page : create.php
+                if(isset($_GET['page'])){
+                    $page = $_GET['page'];
+                    switch ($page) {
+                        case "all":
+                            include("pages/all.php");
+                            break;
+                        case "edit":
+                            include("pages/edit.php");
+                            break;
+                        default:
+                            include("pages/create.php");
+                    }   
+                }
             }else{
-                include("pages/create.php");
+                include("pages/login.php");
             }
         ?>
     </div>

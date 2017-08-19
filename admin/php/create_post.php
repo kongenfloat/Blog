@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
 
 	//Insert new post in database
 	new_post($heading, $blog_text, $image);
-	$_SESSION['success'] = "<div><p>Blogginlegget har blitt opprettet</p></div>";
+	$_SESSION['success'] = "<div><p>Blogginnlegget har blitt opprettet</p></div>";
 	//Redirect back to admin.php
 	header("Location: http://splend-it.no/admin/");
 }else{
