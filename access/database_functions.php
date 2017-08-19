@@ -60,6 +60,16 @@
 		$connect->close();*/
 	}
 
+		function edit_post($id, $heading, $text){
+
+		$updated = get_datetime();
+		global $connect;
+
+		$query = "UPDATE blog_posts SET `heading` = '$heading', `blog_text` = '$text', `updated` = '$updated' WHERE `id` = '$id'";
+		mysqli_query($connect, $query) or die("Klarte ikke å oppdatere blogginnlegget i database..." . mysqli_error($connect));
+
+	}
+
 
 
 	function get_post($id){
