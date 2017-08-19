@@ -37,7 +37,7 @@
 		        echo "<p id='minimized-text'>$blog_text</p>";
 
                 //Using nested quotes to achieve the onclick property
-                echo "<input type='button' onclick=\"location.href='?page=edit&id=$id';\" value='Endre' style='display: inline-block; width: 46px; height: 22.5px; font-size: 12px;' />";
+                echo "<input type='button' onclick=\"location.href='?page=edit&id=$id';\" value='Endre' style='display: inline-block; width: 46px; height: 22.2px; font-size: 12px;' />";
                 echo "<button value='$id' onclick='delete_post(this);'> Slett </a>";
     		echo "</div>";
         echo "</div>";
