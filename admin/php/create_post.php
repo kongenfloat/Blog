@@ -7,6 +7,7 @@ if(isset($_POST['submit'])){
 
 	$heading = $_POST['heading'];
 	$blog_text = $_POST['blog_text'];
+	$id
 
 	$heading = test_input($heading);
 	$blog_text = test_input($blog_text);

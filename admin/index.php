@@ -11,6 +11,7 @@ include_once("../blog/access/database_functions.php");
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/ajax.js"></script>
 </head>
 
 <body>

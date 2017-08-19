@@ -28,8 +28,9 @@
 		        //echo "<p>$likes</p>";
 		        //echo "<p>$views</p>";
 		        echo "<p id='minimized-text'>$blog_text</p>";
+                //<input type="button" onclick="location.href='http://google.com';" value="Go to Google" />
 		        echo "<a href='?page=edit&id=$id'> Endre </a>";
-                echo "<a href='?page=delete&id=$id'> Slett </a>";
+                echo "<button value='$id' onclick='delete_post(this);'> Slett </a>";
     		echo "</div>";
         echo "</div>";
 	}
