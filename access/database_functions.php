@@ -77,6 +77,25 @@
 		mysqli_query($connect, $query) or die("Klarte ikke å oppdatere blogginnlegget i database..." . mysqli_error($connect));
 	}
 
+	function add_user($username, $password){
+
+		global $connect;
+
+		$query = "INSERT INTO users (`username`, `password`) VALUES ('$username', '$password')";
+		mysqli_query($connect, $query) or die("Klarte ikke å legge til blogginnlegget i database..." . mysqli_error($connect));
+
+	}
+
+	function get_user($username){
+		global $connect;
+		$query = "SELECT * FROM users WHERE `username`='$username' LIMIT 1";
+		$result = mysqli_query($connect, $query) or die("Could not get companies to database..." . mysqli_error($connect));
+		$row = mysqli_fetch_assoc($result);
+
+		return $row;
+	}
+
+
 
 
 	function get_post($id){
