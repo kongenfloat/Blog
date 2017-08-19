@@ -20,6 +20,7 @@
         echo "<p class='center-text'>Views: $views</p>";
         echo "<label for='likes' id='likes_label'>Likes: </label>";
         echo "<p id='likes' class='center-text'>$likes</p>";
+        echo "<p id='error' style='color:green'></p>";
         
         //Check to see if the user has already liked this blog post
         if(check_ip($id) == true){

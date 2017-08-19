@@ -22,7 +22,7 @@
 				$likes = add_like($id, $ip);
 				echo $likes;
 			}else{
-				echo "Du har allerede likt dette blogginnlegget";
+				echo "true";
 			}
 		}
 

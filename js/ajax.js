@@ -1,5 +1,5 @@
 function hide(id){
-	document.getElementById(id).style.visibility = hidden;
+	document.getElementById(id).style = "visibility: hidden";
 }
 
 function add_like(button) {
@@ -11,11 +11,14 @@ function add_like(button) {
 	xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
-		if(this.responseText === "exists"){
-			document.getElementById("error").innerHTML = "Du har allerede liket dette blogginnlegget";
+		var msg = xhttp.responseText;
+		console.log(msg); //Display "true" after first like
+		if(msg === "true"){
+			//alert("Den er true");
+			document.getElementById("error").innerHTML = "Du har allerede likt dette blogginnlegget";
 		}else{
-			document.getElementById("likes").innerHTML = this.responseText;
-			hide("likes_label");
+			//alert("Den er ikke true");
+			document.getElementById("likes").innerHTML = msg;
 		}
 	}
 	};

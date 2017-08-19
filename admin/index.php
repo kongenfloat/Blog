@@ -11,10 +11,10 @@
 <body>
 <div id="container">
     <div id="header">
-        <h1>Admin</h1>
+        <h1 class="center-text">Admin</h1>
     </div>
     <div id="content">
-        <form name="post_form" action="php/create_post.php" method="post" enctype="multipart/form-data">
+        <form action="php/login" method="post">
             <input type="text" name="heading" placeholder="Overskrift">
             <textarea name="blog_text" id="textarea">Hva tenker du på?</textarea>
             <label for="fileToUpload">Velg et bilde for opplasting:</label>
