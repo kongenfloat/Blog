@@ -1,3 +1,7 @@
+<?php 
+include_once("php/functions.php");
+include_once("../blog/access/database_functions.php");
+?>
 <!doctype html>
 <html>
 <head>
@@ -12,17 +16,20 @@
 <div id="container">
     <div id="header">
         <h1 class="center-text">Admin</h1>
+        <a href="http://splend-it.no/admin/admin.php?page=all" class="center">Se alle blogginnlegg</a>
     </div>
     <div id="content">
-        <form name="post_form" action="php/create_post.php" method="post" enctype="multipart/form-data">
-            <input type="text" name="heading" placeholder="Overskrift">
-            <textarea name="blog_text" id="textarea">Hva tenker du på?</textarea>
-            <label for="fileToUpload">Velg et bilde for opplasting:</label>
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="Post nytt blogginnlegg" name="submit">
-        </form>
+        <?php 
+            //Check which page to show
+            if(isset($_GET['page'])){
+                if(isset($_GET['page']) == "all"){
+                    include("pages/all.php");
+                }   
+            }else{
+                include("pages/create.php");
+            }
+        ?>
     </div>
-</form>
 </div>
 </body>
 </html>
