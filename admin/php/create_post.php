@@ -1,7 +1,6 @@
 <?php
-include_once("../access/database_functions.php");
+include_once("../../blog/access/database_functions.php");
 include_once("functions.php");
-error_reporting( E_ALL );
 
 //Check if submit is clicked, if not redirect to admin.php with error message.
 if(isset($_POST['submit'])){
@@ -28,7 +27,7 @@ if(isset($_POST['submit'])){
 	new_post($heading, $blog_text, $image);
 
 	//Redirect back to admin.php
-	header("Location: http://splend-it.no/blog/admin.php");
+	header("Location: http://splend-it.no/admin/");
 }else{
 	//TODO:
 	//Handle what to do if submit is not clicked
