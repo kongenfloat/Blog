@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
 	new_post($heading, $blog_text, $image);
 	$_SESSION['success'] = "<div class='success'><p>Blogginnlegget har blitt opprettet</p></div>";
 	//Redirect back to index
-	header("Location: ../index.php");
+	header("Location: http://splend-it.no/admin/?page=all");
 	exit();
 }else{
 	//TODO: Redirect to error page. Reason : Permission denied. 
