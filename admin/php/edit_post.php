@@ -9,6 +9,9 @@ if(isset($_POST['submit'])){
 	$heading = $_POST['heading'];
 	$blog_text = $_POST['blog_text'];
 	$id = $_POST['id'];
+	$post = get_post($id);
+
+	$image = $post['image'];
 	$heading = test_input($heading);
 	$blog_text = test_input($blog_text);
 	//$image = "test";
@@ -20,17 +23,26 @@ if(isset($_POST['submit'])){
 		//Too many characters
 	}
 
-	//Uploads image and returns the path
-	//$image = upload_image();
-
+	// check if fileToUpload is empty and not an error
+	if ($_FILES['fileToUpload']['size'] != 0 && $_FILES['fileToUpload']['error'] == 0){
+		
+		//Check if the post already has an image
+		if($image != "null"){
+			$image = "../" . $image;
+			//Deletes previous image
+			unlink($image);
+		}	
+		//Uploads image and returns the path
+		$image = upload_image();
+	}
 
 	//Insert new post in database
-	edit_post($id, $heading, $blog_text);
+	edit_post($id, $heading, $blog_text, $image);
 
 	//Success message
-	$_SESSION['success'] = "<div class='success'><p>Blogginlegget har blitt endret</p></div>";
+	$_SESSION['success'] = "<div class='success'><p>Blogginnlegget har blitt endret</p></div>";
 
-	//Redirect back to admin.php
+	//Redirect back to admin?page=all
 	header("Location: http://splend-it.no/admin?page=all");
 	exit();
 }else{
