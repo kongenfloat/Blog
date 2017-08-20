@@ -5,6 +5,13 @@ include_once("functions.php");
 
 //Check if submit is clicked, if not redirect to admin.php with error message.
 if(isset($_POST['submit'])){
+	//No need to store these anymore
+	if(isset($_SESSION['edit_heading'])){
+		unset($_SESSION['edit_heading']);	
+	}
+	if(isset($_SESSION['edit_blog_text'])){
+		unset($_SESSION['edit_blog_text']);	
+	}
 
 	$heading = $_POST['heading'];
 	$blog_text = $_POST['blog_text'];
@@ -19,8 +26,25 @@ if(isset($_POST['submit'])){
 
 	//Check length of inputs corresponding to database
 	if(strlen ($heading) > 100 || strlen ($blog_text) > 20000){
-		//TODO: 
-		//Too many characters
+		$_SESSION["edit_heading"] = $heading;
+		$_SESSION["edit_blog_text"] = $blog_text;
+		$_SESSION["edit_id"] = $id;
+
+		//Error messages
+		if(strlen($heading) > 100){
+			$num = strlen($heading);
+			$_SESSION['class'] = "warning";
+			$_SESSION['msg'] = "Tittelen kan maks inneholde 100 tegn. Du har $num tegn nå.";
+		}
+		if(strlen($blog_text) > 20000){
+			$num = strlen($blog_text);
+			$_SESSION['class'] = "warning";
+			$_SESSION['msg'] = "Innlegget kan maks inneholde 20000 tegn. Du har $num tegn nå.";
+		}
+
+		
+		header("Location: http://splend-it.no/admin/?page=edit&id=$id");
+		exit(); 
 	}
 
 	// check if fileToUpload is empty and not an error

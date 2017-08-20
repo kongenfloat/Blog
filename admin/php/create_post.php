@@ -5,9 +5,12 @@ include_once("functions.php");
 
 //Check if submit is clicked, if not redirect to admin with error message.
 if(isset($_POST['submit'])){
-	
-	unset($_SESSION['heading']);
-	unset($_SESSION['blog_text']);
+	if(isset($_SESSION['heading'])){
+		unset($_SESSION['heading']);	
+	}
+	if(isset($_SESSION['blog_text'])){
+		unset($_SESSION['blog_text']);	
+	}
 
 	$heading = $_POST['heading'];
 	$blog_text = $_POST['blog_text'];

@@ -10,6 +10,20 @@
         $updated = $post['updated'];
         $likes = $post['likes'];
         $views = $post['views'];
+
+
+        //Check if there is a heading and blog_text stored.
+        //If id do not match the session variables is cleared
+        if(isset($_SESSION["edit_id"])) {
+                if($_SESSION["edit_id"] == $id){
+                        $heading = $_SESSION["edit_heading"];
+                        $blog_text = $_SESSION["edit_blog_text"];
+                }else{
+                        unset($_SESSION["edit_id"]);
+                        unset($_SESSION["edit_heading"]);
+                        unset($_SESSION["edit_blog_text"]);
+                }
+        }
         ?>
 
 
