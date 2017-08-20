@@ -18,11 +18,19 @@
                 <input type='hidden' name='id' value=' <?php echo $id ?> '>
                 <input type='text' name='heading' value='<?php echo $heading ?>'>
                 <textarea name='blog_text' id='textarea'><?php echo $blog_text ?></textarea>
-                <img src='<?php echo $image ?>' class='center margin-top-4 post-img'>
-                <!--<button type='button'>Velg et nytt bilde</button>-->
-                
-                <label for='fileToUpload'>Velg et bilde for opplasting:</label>
-                <input type='file' name='fileToUpload' id='fileToUpload' value='$image'>
+
+                <?php 
+                if($image != "null"){?>
+                        <img src='<?php echo $image ?>' class='center margin-top-4 post-img'>
+                <?php
+                }else{?>
+                        <p style="text-align: center;">Dette blogginnlegget har ikke bilde </p>
+                <?php
+                }
+
+                ?>
+                <label for='fileToUpload' style="display: block; margin:auto; width: 180px;">Velg et bilde for opplasting:</label>
+                <input style="display: block; margin: auto; width: 175px; margin-top:2%" type='file' name='fileToUpload' id='fileToUpload' value='$image'>
                 
                 <input type='submit' value='Endre blogginnlegget' name='submit'>
         </form>

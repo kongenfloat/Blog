@@ -34,14 +34,10 @@ if(isset($_SESSION['msg'])){
         <h1 class="center-text">Admin</h1>
     </div>
     <div id="content">
-    <!--Message from delete ajax call-->
-
+    
+        <!--Message from session variables and ajax call-->
         <div id="msg" class='<?php echo $class ?>'><p><?php echo $msg ?></p></div>
         <?php
-
-            //Success and error messages from earlier actions
-            //echo $success;
-            //echo $err; 
             
             //Check if admin is logged in if not display login form
             if(isset($_SESSION['user'])){

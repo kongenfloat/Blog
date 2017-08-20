@@ -22,8 +22,8 @@
 		<form name='post_form' action='php/create_post.php' method='post' enctype='multipart/form-data'>
 		<input type='text' name='heading' placeholder='Overskrift' required="required">
 		<textarea name='blog_text' id='textarea' placeholder="Hva tenker du på?" required></textarea>
-		<label for='fileToUpload'>Velg et bilde for opplasting:</label>
-		<input type='file' name='fileToUpload' id='fileToUpload'/>
+        <label for='fileToUpload' style="display: block; margin:auto; width: 180px;">Velg et bilde for opplasting:</label>
+        <input style="display: block; margin: auto; width: 175px; margin-top:2%" type='file' name='fileToUpload' id='fileToUpload' value='$image'>
 		<input type='submit' value='Post nytt blogginnlegg' name='submit'>
 		</form>
 
