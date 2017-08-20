@@ -5,8 +5,8 @@
 		$blog_text = $_SESSION["blog_text"];
 		?>
 		<form name='post_form' action='php/create_post.php' method='post' enctype='multipart/form-data'>
-		<input type='text' name='heading' value='<?php echo $heading ?>'>
-		<textarea name='blog_text' id='textarea'><?php echo $blog_text ?></textarea>
+		<input type='text' name='heading' value='<?php echo $heading ?>' required="required">
+		<textarea name='blog_text' id='textarea' required><?php echo $blog_text ?></textarea>
 		<label for='fileToUpload'>Velg et bilde for opplasting:</label>
 		<input type='file' name='fileToUpload' id='fileToUpload'>
 		<input type='submit' value='Post nytt blogginnlegg' name='submit'>
@@ -20,8 +20,8 @@
 	?>
 
 		<form name='post_form' action='php/create_post.php' method='post' enctype='multipart/form-data'>
-		<input type='text' name='heading' placeholder='Overskrift'>
-		<textarea name='blog_text' id='textarea'>Hva tenker du på?</textarea>
+		<input type='text' name='heading' placeholder='Overskrift' required="required">
+		<textarea name='blog_text' id='textarea' placeholder="Hva tenker du på?" required></textarea>
 		<label for='fileToUpload'>Velg et bilde for opplasting:</label>
 		<input type='file' name='fileToUpload' id='fileToUpload'>
 		<input type='submit' value='Post nytt blogginnlegg' name='submit'>

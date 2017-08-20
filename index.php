@@ -1,6 +1,9 @@
 <?php 
+session_start();
 include_once("access/database_functions.php");
 include_once("../admin/php/functions.php");
+
+
 ?>
 
 <!doctype html>
@@ -37,3 +40,11 @@ include_once("../admin/php/functions.php");
 </div>
 </body>
 </html>
+
+<?php
+//Removes used message variables in session
+//Will not be displayed anymore after reload
+if(isset($_SESSION['like_msg'])){
+    unset($_SESSION['like_msg']);
+}
+?>

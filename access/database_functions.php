@@ -116,7 +116,7 @@
 		return $row;
 	}
 
-	function add_view($id){
+	function increment_view_count($id){
 		global $connect;
 		$result = get_post($id);
 

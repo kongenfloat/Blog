@@ -7,7 +7,7 @@
 		//Database call
 		delete($id);
 		//Message to display
-		echo "Blogginlegget har blitt slettet";
+		echo "Blogginnlegget har blitt slettet";
 	}
 
 ?>

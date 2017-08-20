@@ -40,10 +40,12 @@ if(isset($_POST['submit'])){
 	}
 
 	// check if fileToUpload is empty and not an error
-	if ($_FILES['fileToUpload']['size'] == 0 && $_FILES['fileToUpload']['error'] == 0){
-    
+	if ($_FILES['fileToUpload']['size'] != 0 && $_FILES['fileToUpload']['error'] == 0){
+		
 		//Uploads image and returns the path
 		$image = upload_image();
+	}else{
+		$image = "null";
 	}
 		
 	//Insert new post in database

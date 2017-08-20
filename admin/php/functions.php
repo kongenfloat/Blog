@@ -88,4 +88,10 @@ function check_ip($id){
     }
     return $found;
 }
+
+function minimize($text, $length){
+    $text = substr ($text , 0, $length);
+    $text = $text . "...";
+    return $text;
+}
 ?>
