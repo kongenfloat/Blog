@@ -23,7 +23,7 @@
 		<input type='text' name='heading' placeholder='Overskrift' required="required">
 		<textarea name='blog_text' id='textarea' placeholder="Hva tenker du på?" required></textarea>
 		<label for='fileToUpload'>Velg et bilde for opplasting:</label>
-		<input type='file' name='fileToUpload' id='fileToUpload'>
+		<input type='file' name='fileToUpload' id='fileToUpload'/>
 		<input type='submit' value='Post nytt blogginnlegg' name='submit'>
 		</form>
 
