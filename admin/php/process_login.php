@@ -11,13 +11,16 @@ if(isset($_POST["submit"])){
 		if(md5($password) == $stored_password){
 			$_SESSION['user'] = "admin";
 		}else{
-			$_SESSION['err'] = "<div class='warning'><p>Feil passord</p></div>";
+			$_SESSION['class'] = "warning";
+			$_SESSION['msg'] = "Feil passord";
 		}
 	}else{
-		$_SESSION['err'] = "<div class='warning'><p>Du må skrive inn et passord</p></div>";
+		$_SESSION['class'] = "warning";
+		$_SESSION['msg'] = "Du må skrive inn et passord";
 	}
 }else{
-	$_SESSION['err'] = "<div class='warning'><p>Ingen tilgang</p></div>";
+	$_SESSION['class'] = "warning";
+	$_SESSION['msg'] = "Ingen tilgang";
 }
 
 header("Location: ../index.php");

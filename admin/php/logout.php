@@ -5,7 +5,8 @@
 
    //Start new session for logout message
    session_start();
-   $_SESSION['success'] = "<div class='success'><p>Du er nå logget ut</p></div>";
+   $_SESSION['class'] = "success";
+   $_SESSION['msg'] = "Du er nå logget ut";
    header('Location: http://splend-it.no/admin/');
    exit();
 ?>

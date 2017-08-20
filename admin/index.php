@@ -3,15 +3,15 @@ include_once("php/functions.php");
 include_once("../blog/access/database_functions.php");
 
 //Check if an action has been done earlier
-if(isset($_SESSION['success'])){
-    $success = $_SESSION['success']; 
+if(isset($_SESSION['class'])){
+    $class = $_SESSION['class']; 
 }else{
-    $success="";
+    $class="";
 }
-if(isset($_SESSION['err'])){
-    $err = $_SESSION['err']; 
+if(isset($_SESSION['msg'])){
+    $msg = $_SESSION['msg']; 
 }else{
-    $err="";
+    $msg="";
 }
 ?>
 
@@ -36,12 +36,12 @@ if(isset($_SESSION['err'])){
     <div id="content">
     <!--Message from delete ajax call-->
 
-        <div id="ajax-msg" class="success" style="visibility: hidden;"><p id="msg"></p></div>
+        <div id="msg" class='<?php echo $class ?>'><p><?php echo $msg ?></p></div>
         <?php
 
             //Success and error messages from earlier actions
-            echo $success;
-            echo $err; 
+            //echo $success;
+            //echo $err; 
             
             //Check if admin is logged in if not display login form
             if(isset($_SESSION['user'])){
@@ -92,10 +92,10 @@ if(isset($_SESSION['err'])){
 <?php
 //Removes used message variables in session
 //Will not be displayed anymore after reload
-if(isset($_SESSION['success'])){
-    unset($_SESSION['success']);
+if(isset($_SESSION['class'])){
+    unset($_SESSION['class']);
 }
-if(isset($_SESSION['err'])){
-    unset($_SESSION['err']);
+if(isset($_SESSION['msg'])){
+    unset($_SESSION['msg']);
 }
 ?>

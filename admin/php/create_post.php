@@ -27,11 +27,13 @@ if(isset($_POST['submit'])){
 		//Error messages
 		if(strlen($heading) > 100){
 			$num = strlen($heading);
-			$_SESSION['err'] = "<div class='warning'><p>Tittelen kan maks inneholde 100 tegn. Du har $num tegn nå </p></div>";
+			$_SESSION['class'] = "warning";
+			$_SESSION['msg'] = "Tittelen kan maks inneholde 100 tegn. Du har $num tegn nå.";
 		}
 		if(strlen($blog_text) > 20000){
 			$num = strlen($blog_text);
-			$_SESSION['err'] = "<div class='warning'><p>Innlegget kan maks inneholde 20000 tegn. Du har $num tegn nå </p></div>";
+			$_SESSION['class'] = "warning";
+			$_SESSION['msg'] = "Innlegget kan maks inneholde 20000 tegn. Du har $num tegn nå.";
 		}
 
 		
@@ -50,7 +52,8 @@ if(isset($_POST['submit'])){
 		
 	//Insert new post in database
 	new_post($heading, $blog_text, $image);
-	$_SESSION['success'] = "<div class='success'><p>Blogginnlegget har blitt opprettet</p></div>";
+	$_SESSION['class'] = "success";
+	$_SESSION['msg'] = "Blogginnlegget har blitt opprettet";
 	//Redirect back to index
 	header("Location: http://splend-it.no/admin/?page=all");
 	exit();

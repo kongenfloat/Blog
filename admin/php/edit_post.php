@@ -40,7 +40,8 @@ if(isset($_POST['submit'])){
 	edit_post($id, $heading, $blog_text, $image);
 
 	//Success message
-	$_SESSION['success'] = "<div class='success'><p>Blogginnlegget har blitt endret</p></div>";
+	$_SESSION['class'] = "success";
+	$_SESSION['msg'] = "Blogginnlegget har blitt endret";
 
 	//Redirect back to admin?page=all
 	header("Location: http://splend-it.no/admin?page=all");
