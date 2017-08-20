@@ -1,10 +1,12 @@
 <?php
+        //Get id of blog post to display from GET
+	$id = $_GET['id'];
 
-		$id = $_GET['id'];
+        //Increments view count
+	increment_view_count($id);
 
-		add_view($id);
-
-	    $post = get_post($id);
+        //Get post and declare corresponding variables
+	$post = get_post($id);
         $heading = $post['heading'];
         $blog_text = $post['blog_text'];
         $image = $post['image'];
@@ -22,11 +24,23 @@
         echo "<p id='likes' class='center-text'>$likes</p>";
         echo "<p id='error' style='color:green'></p>";
         
-        //Check to see if the user has already liked this blog post
-        if(check_ip($id) == true){
-        	echo "<p class='center-text' style='color: green;'>Du har allerede likt dette blogginnlegget</p>";	
+
+        if(isset($_SESSION['like_msg'])){
+            $like_msg = $_SESSION['like_msg']; 
         }else{
-        	echo "<button id='like' class='center' value='$id' onclick='add_like(this)'>Like</button>";
+            $like_msg="";
+        }
+
+        echo $like_msg;
+
+        //Check to see if the user has already liked this blog post
+        if(check_ip($id) == true){?>
+                <p class='center-text' style='color: green;'>Du har allerede likt dette blogginnlegget</p>	
+        <?php
+        }else{
+                ?>
+                <a href="php/add_like.php?id=<?php echo $id?>"> Like </a>
+                <?php
         }
 		        
 
