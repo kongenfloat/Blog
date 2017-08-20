@@ -14,6 +14,10 @@
     $updated = $post['updated'];
     $likes = $post['likes'];
     $views = $post['views'];
+
+    //Converts new lines to break tags
+    $blog_text = nl2br($blog_text);
+
     ?>
     <a id="center-a" href="http://splend-it.no/blog/">Tilbake</a>
     <h2 class='center-text' style="margin-top: 5%;"><?php echo $heading ?></h2>
