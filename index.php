@@ -2,8 +2,6 @@
 session_start();
 include_once("access/database_functions.php");
 include_once("../admin/php/functions.php");
-
-
 ?>
 
 <!doctype html>

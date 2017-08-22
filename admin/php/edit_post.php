@@ -3,7 +3,6 @@ session_start();
 include_once("../../blog/access/database_functions.php");
 include_once("functions.php");
 
-//Check if submit is clicked, if not redirect to admin.php with error message.
 if(isset($_POST['submit'])){
 	//No need to store these anymore
 	if(isset($_SESSION['edit_heading'])){
@@ -21,7 +20,6 @@ if(isset($_POST['submit'])){
 	$image = $post['image'];
 	$heading = test_input($heading);
 	$blog_text = test_input($blog_text);
-	//$image = "test";
 
 
 	//Check length of inputs corresponding to database
@@ -52,26 +50,39 @@ if(isset($_POST['submit'])){
 		
 		//Check if the post already has an image
 		if($image != "null"){
-			$image = "../" . $image;
-			//Deletes previous image
-			unlink($image);
+			$old_image = $image;
 		}	
 		//Uploads image and returns the path
 		$image = upload_image();
 	}
 
-	//Insert new post in database
-	edit_post($id, $heading, $blog_text, $image);
 
-	//Success message
-	$_SESSION['class'] = "success";
-	$_SESSION['msg'] = "Blogginnlegget har blitt endret";
+
+
+		//If file is not supported then it will not be uploaded
+	if($image != "not_supported"){
+		//Insert new post in database
+		edit_post($id, $heading, $blog_text, $image);
+
+		if($old_image != "null"){
+			$old_image = "../" . $old_image;
+			//Deletes previous image
+			unlink($old_image);
+		}	
+		//Success message
+		$_SESSION['class'] = "success";
+		$_SESSION['msg'] = "Blogginnlegget har blitt opprettet";
+	}else{
+		$_SESSION['class'] = "warning";
+		$_SESSION['msg'] = "Dette filformatet er ikke mulig å laste opp. ";
+		$_SESSION['edit_heading'] = $heading;
+		$_SESSION['edit_blog_text'] = $blog_text;
+		header("Location: http://splend-it.no/admin/?page=edit&id=$id");
+		exit();
+ 	}
 
 	//Redirect back to admin?page=all
 	header("Location: http://splend-it.no/admin?page=all");
 	exit();
-}else{
-	//TODO:
-	//Handle what to do if submit is not clicked
 }
 ?>

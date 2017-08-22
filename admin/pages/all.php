@@ -23,17 +23,11 @@
             $heading = $heading . "...";    
         }
         
-        //$updated = $post['updated'];
-        //$likes = $post['likes'];
-        //$views = $post['views'];
         echo "<div id='$div_id' class='minimized-post margin-top-4'>";
     			echo "<h3>$heading</h3>";
     			echo "<p>$created</p>";
-
-		        //echo "<p>$likes</p>";
-		        //echo "<p>$views</p>";
 		        echo "<p id='minimized-text'>$blog_text</p>";
-
+                
                 //Using nested quotes to achieve the onclick property
                 echo "<input type='button' onclick=\"location.href='?page=edit&id=$id';\" value='Endre' style='display: inline-block; width: 46px; height: 22.2px; font-size: 12px;' />";
                 echo "<button value='$id' onclick='delete_post(this);'> Slett </a>";

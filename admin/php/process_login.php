@@ -8,6 +8,7 @@ $stored_password = $user["password"];
 if(isset($_POST["submit"])){
 	if(isset($_POST["password"])){
 		$password = $_POST["password"];
+		//Check password against the hashed password stored in db.
 		if(md5($password) == $stored_password){
 			$_SESSION['user'] = "admin";
 		}else{

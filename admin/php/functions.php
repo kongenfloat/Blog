@@ -2,6 +2,7 @@
 
 	function get_datetime(){
     	$date_utc = new DateTime(null, new DateTimeZone("UTC"));
+        $date_utc->modify('+ 2 hour');//Server is two hours behind
     	$date_utc = $date_utc->format('Y-m-d H:i:s');
     	return $date_utc;
 	}
@@ -42,10 +43,10 @@
         $uploadOk = 0;
     }
     // Allow certain file formats
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    && $imageFileType != "gif" ) {
-        //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+        //echo "Sorry, only JPG, JPEG & PNG  are allowed.";
         $uploadOk = 0;
+        $imgname = "not_supported";
     }
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
@@ -54,12 +55,13 @@
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir . $imgname)) {
             //echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+            $imgname = "../uploads/" . $imgname;
         } else {
             //echo "Sorry, there was an error uploading your file.";
         }
     }
 
-    $imgname = "../uploads/" . $imgname;
+    
     return $imgname;
   }
 

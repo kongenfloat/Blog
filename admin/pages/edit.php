@@ -27,7 +27,7 @@
         ?>
 
 
-
+        <a href="php/session_clear.php">Start på nytt</a>
         <form name='edit_form' action='php/edit_post.php' method='post' enctype='multipart/form-data'>
                 <input type='hidden' name='id' value=' <?php echo $id ?> '>
                 <input type='text' name='heading' value='<?php echo $heading ?>'>
@@ -48,11 +48,3 @@
                 
                 <input type='submit' value='Endre blogginnlegget' name='submit'>
         </form>
-
-        <!--
-        echo "<h2 class='center-text'>$heading</h2>";
-        echo "<p class='center-text'>$created</p>";
-        echo "<p class='center'>$blog_text</p>";
-        echo "<img src='$image' class='center margin-top-4 post-img'>";
-        echo "<p class='center-text'>Views: $views</p>";
-        */-->

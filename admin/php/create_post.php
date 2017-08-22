@@ -53,14 +53,22 @@ if(isset($_POST['submit'])){
 		$image = "null";
 	}
 		
-	//Insert new post in database
-	new_post($heading, $blog_text, $image);
-	$_SESSION['class'] = "success";
-	$_SESSION['msg'] = "Blogginnlegget har blitt opprettet";
+	//If file is not supported then it will not be uploaded
+	if($image != "not_supported"){
+		//Insert new post in database
+		new_post($heading, $blog_text, $image);
+		$_SESSION['class'] = "success";
+		$_SESSION['msg'] = "Blogginnlegget har blitt opprettet";
+	}else{
+		$_SESSION['class'] = "warning";
+		$_SESSION['msg'] = "Dette filformatet er ikke mulig å laste opp. ";
+		$_SESSION['heading'] = $heading;
+		$_SESSION['blog_text'] = $blog_text;
+		header("Location: http://splend-it.no/admin/");
+		exit();
+ 	}
 	//Redirect back to index
 	header("Location: http://splend-it.no/admin/?page=all");
 	exit();
-}else{
-	//TODO: Redirect to error page. Reason : Permission denied. 
 }
 ?>
