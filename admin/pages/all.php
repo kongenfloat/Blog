@@ -1,5 +1,7 @@
 <?php
 
+
+if(isset($_SESSION['user'])){
 	$list = get_all_posts();
 
 	foreach ($list as $post => $value) {
@@ -33,6 +35,8 @@
                 echo "<button value='$id' onclick='delete_post(this);'> Slett </a>";
         echo "</div>";
 	}
-
+}else{
+    echo "HTTP 550: Permission denied";
+}
 
 ?>

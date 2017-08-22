@@ -1,6 +1,7 @@
 <?php
-	$id = $_GET['id'];
 
+if(isset($_SESSION['user'])){
+	$id = $_GET['id'];
 
 	$post = get_post($id);
         $heading = $post['heading'];
@@ -52,3 +53,7 @@
                 
                 <input type='submit' value='Endre blogginnlegget' name='submit'>
         </form>
+<?php
+}else{
+        echo "HTTP 550: Permission denied";
+}

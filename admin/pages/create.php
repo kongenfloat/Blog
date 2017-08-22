@@ -1,6 +1,6 @@
 
 <?php 
-	
+if(isset($_SESSION['user'])){
 	if(isset($_SESSION["heading"])) {
 		$heading = $_SESSION["heading"];
 		$blog_text = $_SESSION["blog_text"];
@@ -36,7 +36,9 @@
 		//setrawcookie("blog_text", "", time() - 3600);
 
 	}
-
+}else{
+	echo "HTTP 550: Permission denied";
+}
 ?>
 
         
