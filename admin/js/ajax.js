@@ -1,7 +1,5 @@
 function delete_post(button) {
-
 	var id = button.value;
-	alert(id);
 	var div_id = "div_" + id.toString();
 	//Ask user to confirm delete. 
 	var r = confirm("Er du sikker på at du vil slette dette blogginnlegget?");

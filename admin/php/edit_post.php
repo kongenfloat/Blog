@@ -50,10 +50,9 @@ if(isset($_POST['submit'])){
 	// check if fileToUpload is empty and not an error
 	if ($_FILES['fileToUpload']['size'] != 0 && $_FILES['fileToUpload']['error'] == 0){
 		
-		//Check if the post already has an image
-		if($image != "null"){
-			$old_image = $image;
-		}	
+		//old_image is goning to be used for deleting later
+		$old_image = $image;	
+
 		//Uploads image and returns the path
 		$image = upload_image();
 	}
@@ -66,11 +65,16 @@ if(isset($_POST['submit'])){
 		//Insert new post in database
 		edit_post($id, $heading, $blog_text, $image);
 
-		if($old_image != "null"){
-			$old_image = "../" . $old_image;
-			//Deletes previous image
-			unlink($old_image);
-		}	
+		try{
+			if($old_image != "null"){
+				$old_image = "../" . $old_image;
+				//Deletes previous image
+				unlink($old_image);
+			}
+		}catch(Exception $e){
+			//old_image has not been initialized
+		}
+
 		//Success message
 		$_SESSION['class'] = "success";
 		$_SESSION['msg'] = "Blogginnlegget har blitt opprettet";

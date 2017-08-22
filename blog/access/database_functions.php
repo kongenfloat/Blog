@@ -74,11 +74,11 @@
 
 	function get_user($username){
 		global $connect;
-		$query = "SELECT * FROM users WHERE `username`='$username' LIMIT 1";
+		$query = "SELECT * FROM users WHERE `username` = ? LIMIT 1";
 		$stmt = $connect->prepare($query);
 		$stmt->bind_param('s', $username);
-		$result = $stmt->execute();
-		$stmt->store_result();
+		$stmt->execute();
+		$result = $stmt->get_result();
 		
 		$row = mysqli_fetch_assoc($result);
 
@@ -159,8 +159,8 @@
 		$query = "SELECT * FROM ip_list WHERE `post_id` = ?";
 		$stmt = $connect->prepare($query);
 		$stmt->bind_param('i', $id);
-		$result = $stmt->execute();
-		$stmt->store_result();
+		$stmt->execute();
+		$result = $stmt->get_result();
 		
 		$row = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
