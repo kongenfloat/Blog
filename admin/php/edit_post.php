@@ -18,6 +18,8 @@ if(isset($_POST['submit'])){
 	$post = get_post($id);
 
 	$image = $post['image'];
+
+	//Sanitizes inputs
 	$heading = test_input($heading);
 	$blog_text = test_input($blog_text);
 

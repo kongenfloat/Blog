@@ -17,7 +17,11 @@
         if(isset($_SESSION["edit_id"])) {
                 if($_SESSION["edit_id"] == $id){
                         $heading = $_SESSION["edit_heading"];
-                        $blog_text = $_SESSION["edit_blog_text"];
+                        $blog_text = $_SESSION["edit_blog_text"];?>
+
+                        <a href="php/clear_session.php?page=edit&id= <?php echo $id ?>">Start på nytt</a>
+
+                        <?php
                 }else{
                         unset($_SESSION["edit_id"]);
                         unset($_SESSION["edit_heading"]);
@@ -27,7 +31,7 @@
         ?>
 
 
-        <a href="php/session_clear.php">Start på nytt</a>
+
         <form name='edit_form' action='php/edit_post.php' method='post' enctype='multipart/form-data'>
                 <input type='hidden' name='id' value=' <?php echo $id ?> '>
                 <input type='text' name='heading' value='<?php echo $heading ?>'>

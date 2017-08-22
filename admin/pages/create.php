@@ -1,10 +1,12 @@
+
 <?php 
 	
 	if(isset($_SESSION["heading"])) {
 		$heading = $_SESSION["heading"];
 		$blog_text = $_SESSION["blog_text"];
 		?>
-		<a href="php/session_clear.php">Start på nytt</a>
+		<a href="php/clear_session.php">Start på nytt</a>
+
 		<form name='post_form' action='php/create_post.php' method='post' enctype='multipart/form-data'>
 		<input type='text' name='heading' value='<?php echo $heading ?>' required="required">
 		<textarea name='blog_text' id='textarea' required><?php echo $blog_text ?></textarea>
