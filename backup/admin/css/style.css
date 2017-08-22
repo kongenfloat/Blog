@@ -1,0 +1,162 @@
+
+h1{
+	font-size: 48px;
+	text-align: center;
+}
+
+h2{
+	font-size: 32px;
+}
+
+label{
+	display: block;
+	width: 25%;
+	margin:auto;
+}
+
+input{
+	margin: auto;
+	display: block;
+	height: 36px;
+	width: 80%;
+	margin-top: 3%;
+
+}
+
+textarea{
+	margin: auto;
+	margin-top: 3%;
+	width:80%; 
+	height: 500px;
+	display: block;
+}
+form{
+	width:80%;
+	margin: auto;
+}
+#content{
+	margin: auto;
+	width: 80%;
+}
+
+table{
+	border-spacing: 15px;
+}
+
+#menu{
+	display: block;
+	margin: auto;
+	width: 30%;
+	
+}
+#second{
+	margin-left: 45%;
+}
+a:hover { 
+}
+
+a:link{
+	color : black;
+}
+
+a:visited{
+	color : black;
+}
+
+a:hover{
+
+}
+
+.minimized-post:hover{
+		color: black;
+}
+
+.minimized-post{
+	width: 60%;
+	height: 300px;
+	padding-left: 4%;
+	padding-right: 4%;
+	margin:auto;
+
+
+}
+.minimized-post-left{
+	display : block;
+	width: 35%;
+	height: 20%;
+	float:top;
+}
+.minimized-post-right{
+	display : inline-block;
+	width: 57%;
+}
+.center{
+	margin: auto;
+}
+
+.center-text{
+	 text-align: center;
+}
+
+.inline{
+	display: inline-block;
+}
+img{
+
+	width:60%;
+	height: 80%;
+}
+
+.post-img{
+	display:block;
+	margin: auto;
+	width:40%;
+	height: 40%;
+
+	
+}
+
+.margin-top-4{
+	margin-top:4%;
+}
+.margin-top-2{
+	margin-top:2%;
+}
+
+.margin-right-4{
+	margin-right: 4%;
+}
+
+.margin-left-4{
+	margin-left: 4%;
+}
+
+#minimized-text{
+	margin-top: 3%;
+	height: 50%;
+}
+
+
+/* Warning and sucess messages that appare when submitting form to the database*/
+.warning, .success {
+	width: 55%;
+	height: 2vw;
+	margin: auto;
+	padding: 1.5vw 5% 3% 5%;
+	display:block;
+	text-align: center;
+	border: 1px solid;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+       -o-border-radius: 4px;
+}
+.warning {
+	color: #D8000C;
+	background-color: #FFBABA;
+}
+.success {
+	color: #4F8A10;
+	background-color: #DFF2BF;
+}

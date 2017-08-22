@@ -15,7 +15,7 @@
     $likes = $post['likes'];
     $views = $post['views'];
 
-    //Converts new lines to break tags to be able to display
+    //Converts new lines to break tags
     $blog_text = nl2br($blog_text);
 
     ?>
@@ -43,7 +43,10 @@
     <?php
     }else{
             ?>
-            <a id="center-a" href="../php/add_like.php?id=<?php echo $id?>"> Like </a>
+            <a id="center-a" href="php/add_like.php?id=<?php echo $id?>"> Like </a>
             <?php
     }
+		        
+
+        //echo "<p>$updated</p>";
 ?>

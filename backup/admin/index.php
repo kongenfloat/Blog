@@ -1,6 +1,6 @@
 <?php session_start();
-include_once("../php/functions.php");
-include_once("../access/database_functions.php");
+include_once("php/functions.php");
+include_once("../blog/access/database_functions.php");
 
 //Check if an action has been done earlier
 if(isset($_SESSION['class'])){
@@ -25,7 +25,7 @@ if(isset($_SESSION['msg'])){
     <link rel="stylesheet" type="text/css" href="css/style.css">
     
     <!--Local js imports-->
-    <script src="../js/ajax.js"></script>
+    <script src="js/ajax.js"></script>
 </head>
 
 <body>
@@ -58,7 +58,7 @@ if(isset($_SESSION['msg'])){
                     echo "<td><a href='http://splend-it.no/admin?page=all' class='center'>Se alle blogginnlegg</a></td>";
                 }
 
-                echo "<td><a href='http://splend-it.no/php/logout.php' class='center'>Logg ut</a></td>";
+                echo "<td><a href='http://splend-it.no/admin/php/logout.php' class='center'>Logg ut</a></td>";
                 echo "</tr>";
                 echo "</table>";
 

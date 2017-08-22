@@ -73,9 +73,9 @@
 
 - Contains the different pages that index.php can include.
 
-# /all.php - Displays all blog post in database (Default).
+# /all.php - Displays all blog post in database.
 
-# /create.php - Displays a form for creating a blog post.
+# /create.php - Displays a form for creating a blog post (Default).
 
 # /edit.php - Displays a form were the inputs values equal the corresponding blog post.
 

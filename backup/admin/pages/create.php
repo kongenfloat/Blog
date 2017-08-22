@@ -5,9 +5,9 @@
 		$heading = $_SESSION["heading"];
 		$blog_text = $_SESSION["blog_text"];
 		?>
-		<a href="../php/clear_session.php">Start på nytt</a>
+		<a href="php/clear_session.php">Start på nytt</a>
 
-		<form name='post_form' action='../php/create_post.php' method='post' enctype='multipart/form-data'>
+		<form name='post_form' action='php/create_post.php' method='post' enctype='multipart/form-data'>
 		<input type='text' name='heading' value='<?php echo $heading ?>' required="required">
 		<textarea name='blog_text' id='textarea' required><?php echo $blog_text ?></textarea>
 		<label for='fileToUpload'>Velg et bilde for opplasting:</label>
@@ -22,7 +22,7 @@
 
 	?>
 
-		<form name='post_form' action='../php/create_post.php' method='post' enctype='multipart/form-data'>
+		<form name='post_form' action='php/create_post.php' method='post' enctype='multipart/form-data'>
 		<input type='text' name='heading' placeholder='Overskrift' required="required">
 		<textarea name='blog_text' id='textarea' placeholder="Hva tenker du på?" required></textarea>
         <label for='fileToUpload' style="display: block; margin:auto; width: 180px;">Velg et bilde for opplasting:</label>

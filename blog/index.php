@@ -1,7 +1,7 @@
 <?php 
 session_start();
-include_once("access/database_functions.php");
-include_once("../admin/php/functions.php");
+include_once("../access/database_functions.php");
+include_once("../php/functions.php");
 ?>
 
 <!doctype html>
